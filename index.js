@@ -1,16 +1,17 @@
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
+import dotenv from "dotenv";
 import errorHandler from "./src/middlewares/error.middleware.js";
+
+dotenv.config();
 const app = express();
 
 //Middlewares
 app.use(cors());
 app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded({extended:true}));
 
 //Routes
-//app.use('/api/products', (req, res)=>{res.send('API Rest en Node.js2')});
 app.get("/", (req, res) => {
   res.send({ message: "API Rest en Node.js" });
 });
@@ -18,7 +19,7 @@ app.get("/", (req, res) => {
 // Error Handler
 app.use(errorHandler);
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);
 });
