@@ -4,6 +4,8 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import errorHandler from "./src/middlewares/error.middleware.js";
 
+import productsRoutes from "./src/routes/products.routes.js";
+
 dotenv.config();
 const app = express();
 
@@ -12,8 +14,15 @@ app.use(cors());
 app.use(bodyParser.json());
 
 //Routes
-app.get("/", (req, res) => {
-  res.send({ message: "API Rest en Node.js" });
+app.get("/", (req, res, next) => {
+  res.send({ error: false, message: "API Rest en Node.js" });
+});
+
+// Module Rutes
+app.use("/api/products", productsRoutes);
+
+app.use((req, res) => {
+  res.status(404).json({ error: true, message: "Ruta no encontrada" });
 });
 
 // Error Handler
@@ -21,5 +30,5 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`http://localhost:${PORT}`);
+  console.log(`Servidor corriendo en: http://localhost:${PORT}`);
 });
