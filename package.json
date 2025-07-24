@@ -6,12 +6,14 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "init-users": "node src/scripts/initUsers.js"
   },
   "keywords": [],
   "author": "Carlos R. Arando",
   "license": "MIT",
   "dependencies": {
+    "bcryptjs": "^3.0.2",
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",

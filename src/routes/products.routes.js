@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { authenticate } from "../middlewares/auth.middleware.js";
 import {
   createProduct,
   deleteProduct,
@@ -9,9 +10,12 @@ import {
 
 const router = Router();
 
+// Rutas públicas
 router.get("/", getAllProducts);
 router.get("/:id", getProductById);
-router.post("/", createProduct);
-router.put("/:id", updateProduct);
-router.delete("/:id", deleteProduct);
+
+// Rutas protegidas (requieren autenticación)
+router.post("/", authenticate(['admin', 'user']), createProduct);
+router.put("/:id", authenticate(['admin', 'user']), updateProduct);
+router.delete("/:id", authenticate(['admin']), deleteProduct);
 export default router;
