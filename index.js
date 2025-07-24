@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv/config";
+import authRoutes from "./src/routes/auth.routes.js"
 import productsRoutes from "./src/routes/products.routes.js";
 import errorHandler from "./src/middlewares/error.middleware.js";
 
@@ -19,6 +20,7 @@ app.get("/", (req, res, next) => {
 });
 
 // Module Rutes
+app.use('/auth', authRoutes);
 app.use("/api/products", productsRoutes);
 
 app.use((req, res) => {
