@@ -6,8 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js",
-    "test": "echo \"Erro r: no test specified\" && exit 1"
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "Carlos R. Arando",
@@ -17,8 +16,9 @@
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
-    "firebase": "^11.8.1",
-    "jsonwebtoken": "^9.0.2"
+    "firebase": "^11.10.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"

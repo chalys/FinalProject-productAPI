@@ -1,17 +1,17 @@
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
-import dotenv from "dotenv";
+import dotenv from "dotenv/config";
+import productsRoutes from "./src/routes/products.routes.js";
 import errorHandler from "./src/middlewares/error.middleware.js";
 
-import productsRoutes from "./src/routes/products.routes.js";
-
-dotenv.config();
+//dotenv.config();
 const app = express();
 
 //Middlewares
 app.use(cors());
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //Routes
 app.get("/", (req, res, next) => {
