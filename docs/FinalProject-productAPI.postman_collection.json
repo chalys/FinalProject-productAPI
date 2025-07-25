@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "ec026c15-7096-439a-b7f7-d65e50547b72",
+		"name": "FinalProject-productAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12418046",
+		"_collection_link": "https://planetary-shadow-417865.postman.co/workspace/Team-Workspace~cbd75d7a-6d8e-425d-8c11-d8b796e0950b/collection/12418046-ec026c15-7096-439a-b7f7-d65e50547b72?action=share&source=collection_link&creator=12418046"
+	},
+	"item": [
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "getAllProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}api/products",
+							"host": [
+								"{{baseURL}}api"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProductById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}api/products/YvYGOsFP14xfkTLheXsU",
+							"host": [
+								"{{baseURL}}api"
+							],
+							"path": [
+								"products",
+								"YvYGOsFP14xfkTLheXsU"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InVzZXIiLCJ1c2VybmFtZSI6InVzZXIiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1MzM5MzkwNCwiZXhwIjoxNzUzMzk3NTA0fQ.nY4-S2HFG67MZY5RvxQuBxzxe0qTWeF_5_wE0cx5-uM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nueav herramientas\",\r\n    \"categories\": [\r\n            \"herramientas\",\r\n            \"hogar\"\r\n    ],\r\n    \"description\": \"Juego de 32 piezas para reparaciones domésticas en maletín\",\r\n    \"price\": 550,\r\n    \"stock\": 18\r\n    }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}api/products/",
+							"host": [
+								"{{baseURL}}api"
+							],
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Actualizada herramientas\",\r\n    \"categories\": [\r\n            \"herramientas\",\r\n            \"hogar\"\r\n    ],\r\n    \"description\": \"Juego de 32 piezas para reparaciones domésticas en maletín\",\r\n    \"price\": 550,\r\n    \"stock\": 18\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}api/products/YvYGOsFP14xfkTLheXsU",
+							"host": [
+								"{{baseURL}}api"
+							],
+							"path": [
+								"products",
+								"YvYGOsFP14xfkTLheXsU"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}api/products/YvYGOsFP14xfkTLheXsU2",
+							"host": [
+								"{{baseURL}}api"
+							],
+							"path": [
+								"products",
+								"YvYGOsFP14xfkTLheXsU2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}auth/register",
+							"host": [
+								"{{baseURL}}auth"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"user\",\r\n  \"password\": \"user123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}auth/login",
+							"host": [
+								"{{baseURL}}auth"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
