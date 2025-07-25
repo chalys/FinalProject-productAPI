@@ -1,5 +1,5 @@
 # 🛍️ FinalProject-productAPI
-![Node.js](https://img.shields.io/badge/Node.js-18.x-green?logo=node.js&logoColor=white) ![Express](https://img.shields.io/badge/Express-4.x-lightgrey?logo=express&logoColor=white) ![Firebase](https://img.shields.io/badge/Firestore-10.x-orange?logo=firebase&logoColor=white) ![JWT](https://img.shields.io/badge/JWT-9.x-red?logo=jsonwebtokens&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-18.x-green?logo=node.js&logoColor=white) ![Express](https://img.shields.io/badge/Express-4.x-lightgrey?logo=express&logoColor=white) ![Firebase](https://img.shields.io/badge/Firestore-10.x-orange?logo=firebase&logoColor=white) ![JWT](https://img.shields.io/badge/JWT-9.x-red?logo=jsonwebtokens&logoColor=white) ![bcrypt](https://img.shields.io/badge/Bcrypt-5.x-blue?logo=bcrypt&logoColor=white)
 ## 📌 Descripción del proyecto
 
 API REST segura para gestión de productos con autenticación JWT y almacenamiento en Firestore. Implementa un sistema completo de:
@@ -25,7 +25,6 @@ API REST segura para gestión de productos con autenticación JWT y almacenamien
 * Ve a "Configuración del proyecto" > "Tus aplicaciones" > "Web"
 * Registra tu app y copia los datos de configuración
 * Habilita Firestore en modo de producción
-
 ### 4. Configurar variables de entorno:
 ```text
     PORT=3000
@@ -51,7 +50,6 @@ API REST segura para gestión de productos con autenticación JWT y almacenamien
 |:-------------:|:-------------:|:------------------------------:|:-------------:|
 | POST          | /auth/login   | Iniciar sesión (obtener token) | No            |
 | POST          | /auth/register| Registrar nuevo usuario        | No            |
-
 ### Productos
 | Método        | Endpoint            | Descripción                    |Requiere Auth  |Roles Permitidos  |
 |:-------------:|:-------------------:|:------------------------------:|:-------------:|:----------------:|
@@ -60,7 +58,6 @@ API REST segura para gestión de productos con autenticación JWT y almacenamien
 | POST          | /api/products       | Crear nuevo producto           | Si            | admin, user      |
 | PUT           | /api/products/:id   | Actualizar producto            | Si            | admin, user      |
 | DELETE        | /api/products/:id   | Eliminar producto              | Si            | admin            |
-
 ## 🛠️ Estructura del Proyecto
 ```text
 src/
@@ -86,14 +83,12 @@ Flujo recomendado:
 1. Registrar usuario o usar credenciales por defecto (admin/admin123)
 2. Hacer login para obtener token
 3. Probar endpoints protegidos
-
 ## 🛡️ Seguridad
 * Autenticación JWT con expiración
 * Hash de contraseñas con Bcrypt
 * Validación de datos en todos los endpoints
 * Manejo centralizado de errores
 * Variables sensibles en .env
-
 ## 💻 Tecnologías Utilizadas
 * Backend: Node.js, Express
 * Base de datos: Firebase Firestore
