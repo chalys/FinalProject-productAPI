@@ -73,9 +73,9 @@ src/
 * User: Solo lectura y creación
 * Público: Solo lectura
 ## 🧪 Pruebas con Postman
-1. Importa la colección Postman incluida en /docs/Postman_Collection.json
+1. Importa la colección Postman incluida en /docs/FinalProject-productAPI.postman_collection.json
 2. Configura las variables de entorno en Postman:
-    * base_url: http://localhost:3000
+    * baseURL: http://localhost:3000
     * token: (se autollena al hacer login)
 
 Flujo recomendado:
