@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //Routes
 app.get("/", (req, res, next) => {
-  res.send({ error: false, message: "API Rest en Node.js" });
+  res.send({ success: true, message: "API Rest en Node.js" });
 });
 
 // Module Rutes
@@ -24,7 +24,7 @@ app.use('/auth', authRoutes);
 app.use("/api/products", productsRoutes);
 
 app.use((req, res) => {
-  res.status(404).json({ error: true, message: "Ruta no encontrada" });
+  res.status(404).json({ success: false, message: "Ruta no encontrada" });
 });
 
 // Error Handler
